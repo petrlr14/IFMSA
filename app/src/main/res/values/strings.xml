@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">IFMSA El Salvador</string>
+    <string name="name_hint">First name</string>
+    <string name="last_name_hint">Last name</string>
+    <string name="e_mail_hint">E-mail</string>
+    <string name="ifmsa_logo_description">IFMSA LOGO</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="username_hint">Username</string>
 </resources>
