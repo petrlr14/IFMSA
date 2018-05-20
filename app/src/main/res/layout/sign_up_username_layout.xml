@@ -10,6 +10,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_margin="12dp"
+        android:contentDescription="@string/ifmsa_logo_description"
         android:src="@drawable/main_logo" />
 
     <LinearLayout
