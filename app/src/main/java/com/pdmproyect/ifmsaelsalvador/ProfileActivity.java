@@ -14,7 +14,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-      //  getSupportFragmentManager().beginTransaction().replace(R.id.frame, fragmento).commit();
+      // getSupportFragmentManager().beginTransaction().replace(R.id.frame, fragmento).commit();
     }
 
 }
