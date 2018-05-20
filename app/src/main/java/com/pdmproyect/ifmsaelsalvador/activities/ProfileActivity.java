@@ -1,8 +1,10 @@
-package com.pdmproyect.ifmsaelsalvador;
+package com.pdmproyect.ifmsaelsalvador.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.pdmproyect.ifmsaelsalvador.R;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -11,8 +13,9 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         /*
-        * para probar directamente el signUpActivity
-        * startActivity(new Intent(this, SignUpActivity.class));
-        */
+        * para probra signup
+        *startActivity(new Intent(this, SignUpActivity.class));
+        * */
     }
+
 }
