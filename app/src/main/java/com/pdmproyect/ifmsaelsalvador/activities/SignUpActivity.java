@@ -1,8 +1,9 @@
-package com.pdmproyect.ifmsaelsalvador;
+package com.pdmproyect.ifmsaelsalvador.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.pdmproyect.ifmsaelsalvador.R;
 import com.pdmproyect.ifmsaelsalvador.adapter.StepperAdapter;
 import com.stepstone.stepper.StepperLayout;
 
