@@ -6,6 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:ms_stepperType="dots"
-    tools:context=".SignUpActivity">
+    tools:context=".activities.SignUpActivity">
 
 </com.stepstone.stepper.StepperLayout>
