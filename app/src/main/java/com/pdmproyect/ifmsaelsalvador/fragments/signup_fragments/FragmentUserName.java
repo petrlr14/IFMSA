@@ -4,26 +4,26 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.pdmproyect.ifmsaelsalvador.R;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
 
-public class FragmentName extends android.support.v4.app.Fragment implements Step {
+public class FragmentUserName extends Fragment implements Step {
 
-    TextInputEditText fname, lname, email;
+    TextInputEditText username, password1, password2;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.sign_up_name_layout, container, false);
-        fname=view.findViewById(R.id.edit_text_first_name);
-        lname=view.findViewById(R.id.edit_text_last_name);
-        email=view.findViewById(R.id.edit_text_email);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.sign_up_username_layout, container, false);
+        username=view.findViewById(R.id.edit_text_username);
+        password1=view.findViewById(R.id.edit_text_password);
+        password2=view.findViewById(R.id.edit_text_password2);
         return view;
     }
 
