@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">IFMSA El Salvador</string>
+    <string name="college_text">Universidad</string>
+    <string name="year_text">Año actual:</string>
+    <string name="selected_year_text">Año cursado: </string>
+
+    <string-array name="colleges_array">
+        <item>Universidad Dr. José Matías Delgado</item>
+        <item>Universidad Evangélica de El Salvador</item>
+        <item>Universidad Autónoma de Santa Ana</item>
+    </string-array>
+
+    <string-array name="years_array">
+        <item>1°</item>
+        <item>2°</item>
+        <item>3°</item>
+        <item>4°</item>
+        <item>5°</item>
+        <item>6°</item>
+        <item>7°</item>
+        <item>8°</item>
+    </string-array>
+
 </resources>
