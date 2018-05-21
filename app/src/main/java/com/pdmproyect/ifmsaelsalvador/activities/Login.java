@@ -1,4 +1,4 @@
-package com.pdmproyect.ifmsaelsalvador;
+package com.pdmproyect.ifmsaelsalvador.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.pdmproyect.ifmsaelsalvador.R;
 
 public class Login extends AppCompatActivity {
 
@@ -31,7 +33,7 @@ public class Login extends AppCompatActivity {
         log_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pag_principal = new Intent(Login.this,menu.class);
+                Intent pag_principal = new Intent(Login.this,ProfileActivity.class);
                 startActivity(pag_principal);
 
             }
