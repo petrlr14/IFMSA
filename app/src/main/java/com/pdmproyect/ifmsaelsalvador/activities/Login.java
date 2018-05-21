@@ -1,8 +1,8 @@
 package com.pdmproyect.ifmsaelsalvador.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
     }
 
 
-    public void login(){
+    public void login() {
         log_in = findViewById(R.id.boton_login);
         register = findViewById(R.id.register_login);
         forgot = findViewById(R.id.forgot_pass_login);
@@ -33,9 +33,8 @@ public class Login extends AppCompatActivity {
         log_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pag_principal = new Intent(Login.this,ProfileActivity.class);
+                Intent pag_principal = new Intent(Login.this, SignUpActivity.class);
                 startActivity(pag_principal);
-
             }
         });
 
