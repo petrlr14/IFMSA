@@ -30,14 +30,7 @@ public class Login extends AppCompatActivity {
         register = findViewById(R.id.register_login);
         forgot = findViewById(R.id.forgot_pass_login);
 
-        log_in.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent pag_principal = new Intent(Login.this, SignUpActivity.class);
-                startActivity(pag_principal);
-            }
-        });
-
+        register.setOnClickListener((v)->startActivity(new Intent(Login.this, SignUpActivity.class)));
 
     }
 }
