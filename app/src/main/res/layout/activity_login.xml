@@ -69,6 +69,7 @@
         android:layout_marginBottom="12dp"
         android:background="@color/app_color"
         android:shadowRadius="1"
+        android:textColor="@color/white"
         android:text="@string/login_login_btn"
         android:textStyle="bold" />
 
@@ -79,8 +80,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:text="@string/register_here_login"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -95,8 +95,7 @@
             android:layout_marginBottom="8dp"
             android:clickable="true"
             android:text="@string/forgot_password_login"
-            android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
