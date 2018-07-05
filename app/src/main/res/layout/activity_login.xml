@@ -15,21 +15,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
 
         >
 
-
-        <AutoCompleteTextView
-            android:id="@+id/Username_login"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:hint="@string/username_login"
-            android:inputType="textPersonName"
-            android:maxLines="1"
-            android:singleLine="true" />
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/user_icon" />
+
+            <AutoCompleteTextView
+                android:id="@+id/Username_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="25dp"
+                android:hint="@string/username_login"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </LinearLayout>
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -37,31 +47,42 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp">
 
-        <EditText
-            android:id="@+id/password_login"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:hint="@string/password_hint"
-            android:imeActionId="6"
-            android:imeActionLabel="Log in"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:singleLine="true" />
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/password_user" />
+
+            <EditText
+                android:id="@+id/password_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="25dp"
+                android:hint="@string/password_hint"
+                android:imeActionId="6"
+                android:imeActionLabel="Log in"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </LinearLayout>
     </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/boton_login"
-        android:layout_margin="8dp"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:layout_marginBottom="12dp"
-        android:background="@color/color_logo_800"
-        android:shadowRadius="1"
+        android:background="@drawable/borde_de_btn"
+android:elevation="2dp"
         android:text="@string/login_login_btn"
-        android:textColor="#fff"
+        android:textColor="@color/indigo_500"
         android:textStyle="bold" />
 
 
@@ -69,9 +90,9 @@
         android:id="@+id/register_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:clickable="true"
         android:text="@string/register_here_login"
-       android:layout_marginTop="12dp"
         android:textSize="16sp"
         android:textStyle="bold" />
 
