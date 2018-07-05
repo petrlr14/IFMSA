@@ -1,17 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/frame"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ProfileActivity"
-    android:orientation="vertical">
+    tools:context=".activities.ProfileActivity">
 
-    <ImageView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/profile"/>
+        android:layout_height="match_parent">
 
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageview_fondo_perfil"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+
+            android:scaleType="centerCrop"
+            android:src="@color/indigo_300" />
+
+
+        <ImageButton
+            android:id="@+id/imagebutton_foto_perfil"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/imageview_fondo_perfil"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-60dp"
+            android:elevation="5dp"
+            android:padding="20dp"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imagebutton_foto_perfil"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:elevation="4dp"
+            android:paddingBottom="18dp">
+
+            <TextView
+                android:id="@+id/textview_nombre_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_bottom_min"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Nombre de alguien"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_carnet_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_nombre_perfil"
+                android:layout_marginBottom="@dimen/margin_bottom_min"
+                android:layout_marginTop="@dimen/margin_top_min"
+                android:gravity="center"
+                android:text="00000000@algo.com"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_universidad_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_carnet_perfil"
+                android:layout_marginBottom="@dimen/margin_bottom_min"
+                android:layout_marginTop="@dimen/margin_top_min"
+                android:gravity="center"
+                android:text="Universidad de la vida"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_año_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_universidad_perfil"
+                android:layout_marginBottom="@dimen/margin_bottom_min"
+                android:layout_marginTop="@dimen/margin_top_min"
+                android:gravity="center"
+                android:text="3° año"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/efecto"
+            android:layout_below="@id/relative"
+            android:layout_width="match_parent"
+            android:elevation="5dp"
+            android:background="@color/indigo_200"
+            android:layout_height="14dp">
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/efecto"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_proyectos_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>
