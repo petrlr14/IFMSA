@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "333384222680",
+    "firebase_url": "https://ifmsa-el-salvador.firebaseio.com",
+    "project_id": "ifmsa-el-salvador",
+    "storage_bucket": "ifmsa-el-salvador.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333384222680:android:de8d0951c3104411",
+        "android_client_info": {
+          "package_name": "com.pdmproyect.ifmsaelsalvador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333384222680-nc16q4th8homkb5ecfmbs5l4r83un8ou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcTnIxRawND5ZtyurkIHk06s7lFP1CnrM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
