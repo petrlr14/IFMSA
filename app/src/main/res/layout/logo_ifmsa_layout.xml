@@ -9,7 +9,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="42dp"
         android:contentDescription="@string/ifmsa_logo_description"
         android:src="@drawable/main_logo" />
 
