@@ -60,6 +60,9 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
 
+    //firebase
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+
 }
 
 repositories {
@@ -67,3 +70,4 @@ repositories {
 }
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
