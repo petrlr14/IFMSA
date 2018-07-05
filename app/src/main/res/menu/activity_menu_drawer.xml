@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/perfil_menu"
+            android:icon="@drawable/user_icon"
+            android:title="@string/menu_perfil"
+            />
+        <item
+            android:id="@+id/comites_menu"
+            android:icon="@drawable/comites_icon"
+            android:title="@string/menu_comites"/>
+        <item
+            android:id="@+id/proyectos_menu"
+            android:icon="@drawable/proyectos_menu"
+            android:title="@string/menu_proyectos" />
+        <item
+            android:id="@+id/solicitar_proyecto_menu"
+            android:icon="@drawable/solicitar_proyecto_icon"
+            android:title="@string/menu_solicitar_proyecto" />
+    </group>
+
+    <item android:title="Configuración">
+        <menu>
+            <item
+                android:id="@+id/settings_menu"
+                android:icon="@drawable/settings_icon"
+                android:title="Configuración" />
+            <item
+                android:id="@+id/about_us"
+                android:icon="@drawable/developer_info_icon"
+                android:title="Desarrolladores" />
+        </menu>
+    </item>
+
+</menu>
