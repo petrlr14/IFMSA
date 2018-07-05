@@ -1,0 +1,8 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="Perfil" type="drawable">@drawable/user_icon</item>
+    <item name="Comites" type="drawable">@drawable/comites_icon</item>
+    <item name="Proyectos" type="drawable">@drawable/proyectos_menu</item>
+    <item name="Solicitar_proyecto" type="drawable">@drawable/solicitar_proyecto_icon</item>
+    <item name="Configuracion" type="drawable">@drawable/settings_icon</item>
+    <item name="info" type="drawable">@drawable/developer_info_icon</item>
+</resources>
