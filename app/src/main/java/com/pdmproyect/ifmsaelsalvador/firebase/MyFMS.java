@@ -1,6 +1,5 @@
 package com.pdmproyect.ifmsaelsalvador.firebase;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -12,14 +11,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.media.MediaBrowserCompat;
-import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.pdmproyect.ifmsaelsalvador.R;
-import com.pdmproyect.ifmsaelsalvador.activities.ProfileActivity;
-import com.pdmproyect.ifmsaelsalvador.activities.SignUpActivity;
+import com.pdmproyect.ifmsaelsalvador.activities.MainActivity;
 
 import java.util.Random;
 
@@ -31,7 +27,7 @@ public class MyFMS extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         int notificationId = new Random().nextInt(60000);
-        Intent notificationIntent=new Intent(this, ProfileActivity.class);
+        Intent notificationIntent=new Intent(this, MainActivity.class);
         notificationIntent.setAction(".activities.ProfileActivity");
         notificationIntent.addCategory(Intent.CATEGORY_DEFAULT);
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -50,7 +50,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_menu">menu</string>
+    <string name="title_activity_menu">@string/app_name</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -62,6 +62,7 @@
     <string name="menu_comites">Comités</string>
     <string name="menu_proyectos">Proyectos</string>
     <string name="menu_solicitar_proyecto">Solicitar proyecto</string>
+    <string name="user_photo_description">User photo</string>
 
 
 </resources>

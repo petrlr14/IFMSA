@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.pdmproyect.ifmsaelsalvador">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -16,40 +17,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.SplashScreen">
-
-        </activity>
-        <activity android:name=".activities.ProfileActivity">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                &lt;!&ndash;</intent-filter>&ndash;&gt;
-                &lt;!&ndash;<intent-filter>&ndash;&gt;
-                &lt;!&ndash;<action android:name=".activities.ProfileActivity"/>&ndash;&gt;
-                &lt;!&ndash;<category android:name="android.intent.category.DEFAULT"/>&ndash;&gt;
-            </intent-filter>-->
+            </intent-filter>
         </activity>
-        <activity android:name=".activities.SignUpActivity">
 
-        </activity>
+        <activity android:name=".activities.SignUpActivity" />
 
         <activity android:name=".activities.Login" />
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <!--</intent-filter>-->
-                <!--<intent-filter>-->
-                <!--<action android:name=".activities.ProfileActivity"/>-->
-                <!--<category android:name="android.intent.category.DEFAULT"/>-->
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme" />
 
         <service
             android:name=".firebase.MyFMS"
-            android:stopWithTask="false">
+            android:stopWithTask="false"
+            tools:ignore="ExportedService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

@@ -3,6 +3,8 @@ package com.pdmproyect.ifmsaelsalvador.activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.pdmproyect.ifmsaelsalvador.R;
+import com.pdmproyect.ifmsaelsalvador.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,29 +25,22 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        bindViews();
+    }
+
+    private void bindViews(){
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -52,23 +48,18 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the MainActivity; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -79,24 +70,29 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.perfil_menu) {
-            // Handle the camera action
-        } else if (id == R.id.comites_menu) {
-
-        } else if (id == R.id.proyectos_menu) {
-
-        } else if (id == R.id.solicitar_proyecto_menu) {
-
-        } else if (id == R.id.settings_menu) {
-
-        } else if (id == R.id.about_us) {
-
+        String title="";
+        Fragment fragment = null;
+        switch (id) {
+            case R.id.perfil_menu:
+                fragment = new ProfileFragment();
+                title="Profile";
+                break;
+            case R.id.comites_menu:
+                break;
+            case R.id.proyectos_menu:
+                break;
+            case R.id.solicitar_proyecto_menu:
+                break;
+            case R.id.settings_menu:
+                break;
+            default:
+                break;
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.main_content_frame, fragment).commit();
+        getSupportActionBar().setTitle(title);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

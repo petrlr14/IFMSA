@@ -5,11 +5,10 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 @Entity
-public class Committee {
+public class Project {
 
-    @NonNull
     @PrimaryKey
-    int id;
+    private int id;
 
     public int getId() {
         return id;
