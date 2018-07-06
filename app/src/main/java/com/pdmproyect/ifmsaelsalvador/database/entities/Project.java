@@ -7,14 +7,33 @@ import android.support.annotation.NonNull;
 @Entity
 public class Project {
 
+    @NonNull
     @PrimaryKey
-    private int id;
+    private String id;
 
-    public int getId() {
+    @NonNull
+    private String committee;
+
+    public Project(@NonNull String id, @NonNull String committee) {
+        this.id = id;
+        this.committee = committee;
+    }
+
+    @NonNull
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(@NonNull String id) {
         this.id = id;
+    }
+
+    @NonNull
+    public String getCommittee() {
+        return committee;
+    }
+
+    public void setCommittee(@NonNull String committee) {
+        this.committee = committee;
     }
 }

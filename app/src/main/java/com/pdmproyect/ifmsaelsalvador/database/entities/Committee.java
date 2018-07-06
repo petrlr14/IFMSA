@@ -9,13 +9,18 @@ public class Committee {
 
     @NonNull
     @PrimaryKey
-    int id;
+    private String name;
 
-    public int getId() {
-        return id;
+    public Committee(@NonNull String name) {
+        this.name = name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @NonNull
+    public String getName() {
+        return name;
+    }
+
+    public void setName(@NonNull String name) {
+        this.name = name;
     }
 }

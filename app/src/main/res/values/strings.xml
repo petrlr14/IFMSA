@@ -63,6 +63,7 @@
     <string name="menu_proyectos">Proyectos</string>
     <string name="menu_solicitar_proyecto">Solicitar proyecto</string>
     <string name="user_photo_description">User photo</string>
+    <string name="committee_photo_description">Committee photo</string>
 
 
 </resources>

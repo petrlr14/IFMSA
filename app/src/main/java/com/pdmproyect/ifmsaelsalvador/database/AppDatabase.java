@@ -6,6 +6,7 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 import com.pdmproyect.ifmsaelsalvador.database.dao.CommitteeDao;
+import com.pdmproyect.ifmsaelsalvador.database.dao.ProjectDao;
 import com.pdmproyect.ifmsaelsalvador.database.entities.Committee;
 
 @Database(entities = {Committee.class}, exportSchema = false,version = 1)
@@ -23,5 +24,6 @@ public abstract class AppDatabase extends RoomDatabase{
     }
 
     public abstract CommitteeDao committeeDao();
+    public abstract ProjectDao projectDao();
 
 }

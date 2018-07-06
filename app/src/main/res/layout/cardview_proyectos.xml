@@ -15,7 +15,8 @@
             android:id="@+id/ImageView_foto_proyecto"
             android:layout_width="match_parent"
             android:layout_height="125dp"
-            android:src="@color/indigo_200" />
+            android:src="@color/indigo_200"
+            android:contentDescription="@string/committee_photo_description" />
 
         <LinearLayout
             android:id="@+id/proyect_linear"
