@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/logo_ifmsa_layout"></include>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="Formulario Completo"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="35dp"
+        android:textSize="18sp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Se ha completado el formulario
+porfavor espere el correo de
+confirmación para acceder a
+la aplicación y sus funciónes."
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/Button_Regresar_formulario"
+            android:text="Regresar a Inicio de Sesión"
+            android:layout_width="250dp"
+            android:textStyle="bold"
+            android:textColor="@color/indigo_500"
+            android:background="@drawable/borde_de_btn"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
