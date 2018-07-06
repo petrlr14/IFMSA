@@ -3,10 +3,15 @@ package com.pdmproyect.ifmsaelsalvador.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.iid.InstanceIdResult;
 import com.pdmproyect.ifmsaelsalvador.R;
 
 public class Login extends AppCompatActivity {
@@ -30,7 +35,7 @@ public class Login extends AppCompatActivity {
         register = findViewById(R.id.register_login);
         forgot = findViewById(R.id.forgot_pass_login);
 
-        register.setOnClickListener((v)->startActivity(new Intent(Login.this, SignUpActivity.class)));
+        register.setOnClickListener((v) -> startActivity(new Intent(Login.this, SignUpActivity.class)));
 
     }
 }
