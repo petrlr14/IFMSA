@@ -37,7 +37,7 @@ public class Repository {
     public LiveData<List<Project>> getProjectsByCommittee(String committee){
         return this.projectDao.getProjectsByCommittee(committee);
     }
-    public Project getProjectByID(String id){
+    public LiveData<Project> getProjectByID(String id){
         return this.projectDao.getProjectByID(id);
     }
     public void insertProject(Project project){

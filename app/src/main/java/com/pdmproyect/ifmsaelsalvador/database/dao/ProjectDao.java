@@ -34,5 +34,5 @@ public interface ProjectDao {
      * @return filtered project
      */
     @Query("SELECT*FROM Project WHERE id=:id")
-    Project getProjectByID(String id);
+    LiveData<Project> getProjectByID(String id);
 }
