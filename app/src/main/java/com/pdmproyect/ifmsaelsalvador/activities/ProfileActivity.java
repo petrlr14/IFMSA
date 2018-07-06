@@ -12,7 +12,6 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        startActivity(new Intent(this, Login.class));
         /*
         * para probra signup
         *startActivity(new Intent(this, SignUpActivity.class));

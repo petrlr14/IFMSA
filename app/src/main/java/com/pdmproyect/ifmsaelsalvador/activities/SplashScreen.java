@@ -11,6 +11,7 @@ import com.pdmproyect.ifmsaelsalvador.R;
 
 public class SplashScreen extends AppCompatActivity {
     private final int DURACION_SPLASH = 3000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -20,14 +21,11 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
 
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                Intent intent = new Intent(SplashScreen.this,Login.class);
-                startActivity(intent);
-                finish();
-            };
-
-        },DURACION_SPLASH);
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(SplashScreen.this, Login.class);
+            startActivity(intent);
+            finish();
+        }, DURACION_SPLASH);
 
     }
 }
