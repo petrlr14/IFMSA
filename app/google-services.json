@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "333384222680-4dbk50jvs27adi2vv6phfb0r9ojvvhpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pdmproyect.ifmsaelsalvador",
+            "certificate_hash": "4a87c3154c707dd16eea7416d0dae2be3b85c953"
+          }
+        },
+        {
           "client_id": "333384222680-nc16q4th8homkb5ecfmbs5l4r83un8ou.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333384222680-nc16q4th8homkb5ecfmbs5l4r83un8ou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
