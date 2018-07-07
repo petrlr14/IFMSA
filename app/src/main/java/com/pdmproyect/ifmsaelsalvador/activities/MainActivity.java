@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.pdmproyect.ifmsaelsalvador.R;
+import com.pdmproyect.ifmsaelsalvador.fragments.CommitteeFragment;
 import com.pdmproyect.ifmsaelsalvador.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -40,15 +41,15 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    /*@Override
+    @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
-    }*/
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -79,6 +80,8 @@ public class MainActivity extends AppCompatActivity
                 title="Profile";
                 break;
             case R.id.comites_menu:
+                fragment=new CommitteeFragment();
+                title="Committees";
                 break;
             case R.id.proyectos_menu:
                 break;

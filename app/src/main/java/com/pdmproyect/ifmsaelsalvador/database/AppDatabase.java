@@ -8,8 +8,9 @@ import android.content.Context;
 import com.pdmproyect.ifmsaelsalvador.database.dao.CommitteeDao;
 import com.pdmproyect.ifmsaelsalvador.database.dao.ProjectDao;
 import com.pdmproyect.ifmsaelsalvador.database.entities.Committee;
+import com.pdmproyect.ifmsaelsalvador.database.entities.Project;
 
-@Database(entities = {Committee.class}, exportSchema = false,version = 1)
+@Database(entities = {Committee.class, Project.class}, exportSchema = false,version = 1)
 public abstract class AppDatabase extends RoomDatabase{
 
     private static volatile AppDatabase db;

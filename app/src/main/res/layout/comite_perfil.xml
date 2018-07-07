@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:shadowRadius="3dp"
             android:text="Acronimo Comite"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -100,6 +99,7 @@
                     />
 
                 <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_proyectos_committee"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 

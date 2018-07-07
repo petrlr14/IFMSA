@@ -5,13 +5,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.pdmproyect.ifmsaelsalvador.R;
 import com.pdmproyect.ifmsaelsalvador.database.entities.Committee;
 
 import java.util.List;
 
-public class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.ViewHolder> {
+public abstract class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.ViewHolder> {
 
     private List<Committee> committees;
 
@@ -33,7 +35,7 @@ public class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.View
      * @param holder view holder that contains widgets to show
      */
     private void bindViews(Committee aux, ViewHolder holder){
-        /*TODO bind views*/
+        holder.name=aux.getName();
     }
 
     @Override
@@ -50,9 +52,20 @@ public class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.View
         this.committees = committees;
     }
 
+    public abstract void onCommitteeClick(String name);
+
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        String name;
+
+        ImageView imageViewLogoCommittee;
+        TextView textViewNameCommittee, textViewDefinitionNameCommittee;
         public ViewHolder(View itemView) {
             super(itemView);
+            imageViewLogoCommittee=itemView.findViewById(R.id.ImageView_IComite_Comite);
+            textViewNameCommittee=itemView.findViewById(R.id.TextView_Acronimo_Comite);
+            textViewDefinitionNameCommittee=itemView.findViewById(R.id.TextView_DefAcronimo_Comite);
+            itemView.setOnClickListener(v->onCommitteeClick(name));
         }
     }
 }

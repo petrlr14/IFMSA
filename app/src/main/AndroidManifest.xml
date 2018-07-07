@@ -30,6 +30,7 @@
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme" />
+        <activity android:name=".activities.CommitteeOverview" />
 
         <service
             android:name=".firebase.MyFMS"
