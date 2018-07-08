@@ -96,7 +96,7 @@
                     android:layout_gravity="center"
 
                     android:text="00/00/0000"
-                    android:textSize="@dimen/text_profile" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
