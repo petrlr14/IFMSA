@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Foto de evento"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/arrow_back" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lin1"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Comite "
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+            </Spinner>
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de evento"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/EditText_Nombre_CrearProyeto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Lugar de el evento"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/EditText_Lugar_CrearProyecto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Descripción"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:inputType="text" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lin"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Fecha de el evento"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/EditText_Fecha_CrearProyecto"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:hint="DD/MM/YYYY"
+                android:inputType="date" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Hora de Evento"
+                android:textSize="@dimen/text_profile"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/EditText_Tiempo_CrearProyecto"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:hint="00:00"
+                    android:inputType="time" />
+
+                <Spinner
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                </Spinner>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lin2"
+            android:layout_marginTop="40dp"
+            android:gravity="center||bottom">
+
+
+            <Button
+
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borde_de_btn"
+                android:text="Crear Evento"
+                android:textColor="@color/indigo_500"
+
+                android:textStyle="bold"
+
+                />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
