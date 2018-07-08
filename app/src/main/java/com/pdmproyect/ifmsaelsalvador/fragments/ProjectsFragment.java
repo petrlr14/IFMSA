@@ -89,9 +89,8 @@ public class ProjectsFragment extends Fragment {
                 .baseUrl(IFMSAAPI.END_POINT)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-        System.out.println(token.substring(1, token.length()-1));
         Call<List<Project>> getProjects=retrofit.create(IFMSAAPI.class)
-                .getProjects("Bearer "+token.substring(1, token.length()-1));
+                .getProjects("Bearer "+token);
         getProjects.enqueue(new Callback<List<Project>>() {
             @Override
             public void onResponse(Call<List<Project>> call, Response<List<Project>> response) {

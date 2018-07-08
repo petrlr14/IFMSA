@@ -139,9 +139,10 @@ public class ClientRequest {
     }
 
     private static void saveToken(Context context, String token){
+        System.out.println(token);
         SharedPreferences preferences=context.getSharedPreferences("log", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=preferences.edit();
-        editor.putString("token", token.substring(1, token.length()-1));
+        editor.putString("token", token);
         editor.commit();
     }
 

@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity
     private String getToken(){
         String token=getSharedPreferences("log", Context.MODE_PRIVATE)
                 .getString("token", "");
-        return token.substring(1, token.length()-1);
+        return token;
     }
 
     private void setFirstView() {
