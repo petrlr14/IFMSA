@@ -19,6 +19,8 @@ import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
+import java.util.regex.Pattern;
+
 public class FragmentName extends android.support.v4.app.Fragment implements BlockingStep {
 
     TextInputEditText fname, lname, email;
@@ -46,6 +48,9 @@ public class FragmentName extends android.support.v4.app.Fragment implements Blo
         if (fname.getText().toString().equals("") || lname.getText().toString().equals("")
                 || email.getText().toString().equals("")) {
             return new VerificationError("Field must not be empty");
+        }
+        if(!validateEmail(email.getText().toString())){
+            return new VerificationError("Email must be valid");
         }
         return null;
     }
@@ -84,6 +89,17 @@ public class FragmentName extends android.support.v4.app.Fragment implements Blo
     @Override
     public void onBackClicked(StepperLayout.OnBackClickedCallback callback) {
 
+    }
+
+
+    /**
+     * @param email email to be validated
+     * @return true if is valid, false otherwise
+     */
+    private boolean validateEmail(String email){
+         String regex="^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+         Pattern pattern=Pattern.compile(regex);
+         return pattern.matcher(email).matches();
     }
 }
 
