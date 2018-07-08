@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import com.pdmproyect.ifmsaelsalvador.database.dao.CommitteeDao;
 import com.pdmproyect.ifmsaelsalvador.database.dao.ProjectDao;
 import com.pdmproyect.ifmsaelsalvador.database.entities.Committee;
-import com.pdmproyect.ifmsaelsalvador.database.entities.Project;
+import com.pdmproyect.ifmsaelsalvador.database.entities.ProjectEntity;
 
 import java.util.List;
 
@@ -31,17 +31,21 @@ public class Repository {
     }
 
     //Projects
-    public LiveData<List<Project>> getProjects(){
+    public LiveData<List<ProjectEntity>> getProjects(){
         return this.projectDao.getAllProjects();
     }
-    public LiveData<List<Project>> getProjectsByCommittee(String committee){
+    public LiveData<List<ProjectEntity>> getProjectsByCommittee(String committee){
         return this.projectDao.getProjectsByCommittee(committee);
     }
-    public LiveData<Project> getProjectByID(String id){
+    public LiveData<ProjectEntity> getProjectByID(String id){
         return this.projectDao.getProjectByID(id);
     }
-    public void insertProject(Project project){
-        new InsertProjectAsyncTask(projectDao).execute(project);
+    public void insertProject(ProjectEntity projectEntity){
+        new InsertProjectAsyncTask(projectDao).execute(projectEntity);
+    }
+
+    public void nukeTable(){
+        new deleteTableAsyncTask(projectDao).execute();
     }
 
     /* *****************************************INNER CLASSES****************************** */
@@ -61,7 +65,7 @@ public class Repository {
         }
     }
     //Projects
-    public static class InsertProjectAsyncTask extends AsyncTask<Project, Void, Void>{
+    public static class InsertProjectAsyncTask extends AsyncTask<ProjectEntity, Void, Void>{
 
         private ProjectDao projectDao;
 
@@ -70,8 +74,23 @@ public class Repository {
         }
 
         @Override
-        protected Void doInBackground(Project... projects) {
-            this.projectDao.insert(projects[0]);
+        protected Void doInBackground(ProjectEntity... projectEntities) {
+            this.projectDao.insert(projectEntities[0]);
+            return null;
+        }
+    }
+
+    private static class deleteTableAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        ProjectDao projectDao;
+
+        public deleteTableAsyncTask(ProjectDao projectDao) {
+            this.projectDao = projectDao;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            projectDao.nukeTable();
             return null;
         }
     }

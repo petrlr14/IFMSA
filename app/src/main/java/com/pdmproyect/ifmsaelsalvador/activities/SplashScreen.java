@@ -1,7 +1,8 @@
 package com.pdmproyect.ifmsaelsalvador.activities;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,16 +17,29 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
 
 
-        new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }, DURACION_SPLASH);
+        new Handler().postDelayed(this::startActivity, DURACION_SPLASH);
 
+    }
+
+    private void startActivity(){
+        Intent intent;
+        if (getLocalToken().equals("")) {
+            intent = new Intent(SplashScreen.this, LoginActivity.class);
+        }else{
+            intent=new Intent(SplashScreen.this, MainActivity.class);
+        }
+        System.out.println(getLocalToken());
+        startActivity(intent);
+        finish();
+    }
+
+    private String getLocalToken(){
+        SharedPreferences preferences=
+                getSharedPreferences("log", Context.MODE_PRIVATE);
+        return preferences.getString("token", "");
     }
 }

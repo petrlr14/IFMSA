@@ -9,13 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pdmproyect.ifmsaelsalvador.R;
-import com.pdmproyect.ifmsaelsalvador.database.entities.Project;
+import com.pdmproyect.ifmsaelsalvador.database.entities.ProjectEntity;
 
 import java.util.List;
 
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHolder>{
 
-    private List<Project> projectList;
+    private List<ProjectEntity> projectEntityList;
 
     @NonNull
     @Override
@@ -26,7 +26,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Project aux=projectList.get(position);
+        ProjectEntity aux= projectEntityList.get(position);
         bindViews(aux, holder);
     }
 
@@ -34,21 +34,22 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
      * @param aux project that will be displayed into {@link android.support.v7.widget.CardView}
      * @param holder view holder that contains widgets to show
      */
-    private void bindViews(Project aux, ViewHolder holder){
-        /*TODO bind views*/
+    private void bindViews(ProjectEntity aux, ViewHolder holder){
+        holder.textViewProjectName.setText(aux.getName());
     }
 
     @Override
     public int getItemCount() {
-        return projectList==null?0:projectList.size();
+        return projectEntityList ==null?0: projectEntityList.size();
     }
 
 
     /**
-     * @param projectList list of projects that {@link RecyclerView} will show
+     * @param projectEntityList list of projects that {@link RecyclerView} will show
      */
-    public void setProjectList(List<Project> projectList){
-        this.projectList=projectList;
+    public void setProjectEntityList(List<ProjectEntity> projectEntityList){
+        this.projectEntityList = projectEntityList;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -45,7 +45,7 @@ public class CommitteeFragment extends Fragment {
      * @param view view that will provide widgets references
      */
     private void bindViews(View view) {
-        recyclerViewProjects = view.findViewById(R.id.recyclerview_all_committee);
+        recyclerViewProjects = view.findViewById(R.id.recyclerview_all);
     }
 
     private void setThings() {

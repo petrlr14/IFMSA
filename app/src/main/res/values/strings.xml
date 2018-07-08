@@ -31,7 +31,7 @@
     </string-array>
     <string name="title_activity_login">Sign in</string>
 
-    <!-- Strings related to login -->
+    <!-- Strings related to bindViews -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -64,6 +64,7 @@
     <string name="menu_solicitar_proyecto">Solicitar proyecto</string>
     <string name="user_photo_description">User photo</string>
     <string name="committee_photo_description">Committee photo</string>
+    <string name="phone_number_hint">Phone number</string>
 
 
 </resources>

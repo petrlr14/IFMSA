@@ -1,5 +1,7 @@
 package com.pdmproyect.ifmsaelsalvador.activities;
 
+import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,20 +18,34 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.pdmproyect.ifmsaelsalvador.R;
+import com.pdmproyect.ifmsaelsalvador.api.ClientRequest;
+import com.pdmproyect.ifmsaelsalvador.database.IFMSAViewModel;
 import com.pdmproyect.ifmsaelsalvador.fragments.CommitteeFragment;
 import com.pdmproyect.ifmsaelsalvador.fragments.ProfileFragment;
+import com.pdmproyect.ifmsaelsalvador.fragments.ProjectsFragment;
+
+import static java.lang.Boolean.getBoolean;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private IFMSAViewModel viewModel;
+    private boolean isFirstEntry=true;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bindViews();
+        if(savedInstanceState!=null){
+            if(savedInstanceState.containsKey("first")){
+                isFirstEntry=getBoolean("first");
+            }
+        }
+        bindViews(isFirstEntry);
     }
 
-    private void bindViews(){
+    private void bindViews(boolean flag){
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -37,8 +53,13 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        viewModel= ViewModelProviders.of(this).get(IFMSAViewModel.class);
+        if (flag) {
+            setFirstView();
+        }
+        ClientRequest.getProjects(viewModel, getToken());
     }
 
     @Override
@@ -49,6 +70,12 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("first", false);
     }
 
     @Override
@@ -68,7 +95,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -84,6 +110,8 @@ public class MainActivity extends AppCompatActivity
                 title="Committees";
                 break;
             case R.id.proyectos_menu:
+                fragment=new ProjectsFragment();
+                title="Projects";
                 break;
             case R.id.solicitar_proyecto_menu:
                 break;
@@ -99,4 +127,18 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private String getToken(){
+        String token=getSharedPreferences("log", Context.MODE_PRIVATE)
+                .getString("token", "");
+        return token.substring(1, token.length()-1);
+    }
+
+    private void setFirstView() {
+        if (isFirstEntry) {
+            navigationView.setCheckedItem(R.id.perfil_menu);
+            navigationView.getMenu().performIdentifierAction(R.id.perfil_menu,0);
+        }
+    }
+
 }

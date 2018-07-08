@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.pdmproyect.ifmsaelsalvador">
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <!-- To auto-complete the email text field in the bindViews form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -11,21 +11,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ifmsa_logo1"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ifmsa_logo1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.SignUpActivity" />
-
-        <activity android:name=".activities.Login" />
+        <activity android:name=".activities.LoginActivity" />
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_menu"
@@ -41,7 +40,7 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".activities.CompleteFormActivity"></activity>
     </application>
-
 
 </manifest>
