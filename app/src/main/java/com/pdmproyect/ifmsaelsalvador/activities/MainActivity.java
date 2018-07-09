@@ -21,6 +21,7 @@ import com.pdmproyect.ifmsaelsalvador.R;
 import com.pdmproyect.ifmsaelsalvador.api.ClientRequest;
 import com.pdmproyect.ifmsaelsalvador.database.IFMSAViewModel;
 import com.pdmproyect.ifmsaelsalvador.fragments.CommitteeFragment;
+import com.pdmproyect.ifmsaelsalvador.fragments.CreateProjectsFragment;
 import com.pdmproyect.ifmsaelsalvador.fragments.ProfileFragment;
 import com.pdmproyect.ifmsaelsalvador.fragments.ProjectsFragment;
 
@@ -114,6 +115,7 @@ public class MainActivity extends AppCompatActivity
                 title="Projects";
                 break;
             case R.id.solicitar_proyecto_menu:
+                fragment = new CreateProjectsFragment();
                 break;
             case R.id.settings_menu:
                 break;
@@ -129,8 +131,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private String getToken(){
-        String token=getSharedPreferences("log", Context.MODE_PRIVATE)
-                .getString("token", "");
+        String token=getSharedPreferences(getString(R.string.sharedpreferences_name), Context.MODE_PRIVATE)
+                .getString(getString(R.string.sharedpreferences_key), "");
         return token;
     }
 
