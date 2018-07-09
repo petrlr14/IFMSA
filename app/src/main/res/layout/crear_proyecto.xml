@@ -30,7 +30,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="12dp"
-                android:src="@drawable/arrow_back" />
+                android:src="@drawable/add_photo_icon" />
 
         </LinearLayout>
 
@@ -103,7 +103,7 @@
             <EditText
                 android:id="@+id/edit_text_descrption"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_marginBottom="12dp"
                 android:inputType="text" />
 
@@ -127,12 +127,14 @@
                 android:textStyle="bold" />
 
 
-            <EditText
-                android:id="@+id/EditText_Fecha_CrearProyecto"
-                android:layout_width="125dp"
+            <DatePicker
+                android:id="@+id/DatePicker_Date_CrearProyecto"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="DD/MM/YYYY"
-                android:inputType="date" />
+                android:layout_marginBottom="12dp">
+
+
+            </DatePicker>
 
 
             <TextView
@@ -143,8 +145,10 @@
                 android:textSize="@dimen/text_profile"
                 android:textStyle="bold" />
 
-            <LinearLayout
+            <TimePicker
+                android:id="@+id/TimePicker_Time_CrearProyecto"
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -169,7 +173,9 @@
                     android:gravity="center"
                     android:hint="4"
                     android:inputType="time" />
-            </LinearLayout>
+
+
+            </TimePicker>
 
 
         </LinearLayout>
