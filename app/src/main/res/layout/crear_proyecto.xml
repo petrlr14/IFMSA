@@ -50,6 +50,7 @@
                 android:textStyle="bold" />
 
             <Spinner
+                android:id="@+id/comite_spinner"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp">
@@ -100,6 +101,7 @@
 
 
             <EditText
+                android:id="@+id/edit_text_descrption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
@@ -159,6 +161,14 @@
                     android:layout_gravity="center">
 
                 </Spinner>
+
+                <EditText
+                    android:id="@+id/edit_text_vacancies"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="4"
+                    android:inputType="time" />
             </LinearLayout>
 
 
@@ -170,17 +180,16 @@
             android:layout_height="match_parent"
             android:layout_below="@id/lin2"
             android:layout_marginTop="40dp"
-            android:gravity="center||bottom">
+            android:gravity="center|bottom">
 
 
             <Button
-
+                android:id="@+id/button_crear_evento"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/borde_de_btn"
                 android:text="Crear Evento"
                 android:textColor="@color/indigo_500"
-
                 android:textStyle="bold"
 
                 />
