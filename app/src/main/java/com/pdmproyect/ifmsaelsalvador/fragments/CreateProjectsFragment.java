@@ -83,7 +83,6 @@ public class CreateProjectsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.from(container.getContext()).inflate(R.layout.crear_proyecto, container, false);
         comite = (Spinner) rootView.findViewById(R.id.comite_spinner);
-        date = (TextView) rootView.findViewById(R.id.EditText_Fecha_CrearProyecto);
         name = (TextView) rootView.findViewById(R.id.EditText_Nombre_CrearProyeto);
         place = (TextView) rootView.findViewById(R.id.EditText_Lugar_CrearProyecto);
         description = (TextView) rootView.findViewById(R.id.edit_text_descrption);
