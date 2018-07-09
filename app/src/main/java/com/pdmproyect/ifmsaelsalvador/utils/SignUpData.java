@@ -29,7 +29,7 @@ public class SignUpData {
     public void setThirdStepInfo(String collage, String year, String phone) {
         this.college = collage;
         this.year = year;
-        this.phone=phone;
+        this.phone = phone;
     }
 
     private void setName(String name) {

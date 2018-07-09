@@ -26,16 +26,16 @@ public class FragmentUserName extends Fragment implements BlockingStep {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context=getActivity();
+        context = getActivity();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.sign_up_username_layout, container, false);
-        username=view.findViewById(R.id.edit_text_username);
-        password1=view.findViewById(R.id.edit_text_password);
-        password2=view.findViewById(R.id.edit_text_password2);
+        View view = inflater.inflate(R.layout.sign_up_username_layout, container, false);
+        username = view.findViewById(R.id.edit_text_username);
+        password1 = view.findViewById(R.id.edit_text_password);
+        password2 = view.findViewById(R.id.edit_text_password2);
         return view;
     }
 
@@ -43,13 +43,13 @@ public class FragmentUserName extends Fragment implements BlockingStep {
     @Override
     public VerificationError verifyStep() {
         if (username.getText().toString().equals("")
-                ||password1.getText().toString().equals("")
-                ||password2.getText().toString().equals("")
+                || password1.getText().toString().equals("")
+                || password2.getText().toString().equals("")
                 ) {
-            return new VerificationError("Field must not be empty");
+            return new VerificationError(getString(R.string.field_empty_message));
         }
-        if(!password1.getText().toString().equals(password2.getText().toString())){
-            return new VerificationError("Passwords must match");
+        if (!password1.getText().toString().equals(password2.getText().toString())) {
+            return new VerificationError(getString(R.string.password_match_message));
         }
         return null;
     }
@@ -66,10 +66,10 @@ public class FragmentUserName extends Fragment implements BlockingStep {
 
     @Override
     public void onNextClicked(StepperLayout.OnNextClickedCallback callback) {
-        new Handler().postDelayed(()->onNext(callback), 500);
+        new Handler().postDelayed(() -> onNext(callback), 500);
     }
 
-    private void onNext(StepperLayout.OnNextClickedCallback callback){
+    private void onNext(StepperLayout.OnNextClickedCallback callback) {
         SignUpData.getInstance().
                 setSecondStepInfo(
                         username.getText().toString(),

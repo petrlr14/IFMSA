@@ -10,21 +10,22 @@ import com.pdmproyect.ifmsaelsalvador.database.dao.ProjectDao;
 import com.pdmproyect.ifmsaelsalvador.database.entities.Committee;
 import com.pdmproyect.ifmsaelsalvador.database.entities.ProjectEntity;
 
-@Database(entities = {Committee.class, ProjectEntity.class}, exportSchema = false,version = 1)
-public abstract class AppDatabase extends RoomDatabase{
+@Database(entities = {Committee.class, ProjectEntity.class}, exportSchema = false, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase db;
-    private static final String DBNAME="ifmsa.db";
+    private static final String DBNAME = "ifmsa.db";
 
     public static AppDatabase getInstance(Context context) {
-        if(db==null){
-            db= Room.databaseBuilder(context, AppDatabase.class, DBNAME)
+        if (db == null) {
+            db = Room.databaseBuilder(context, AppDatabase.class, DBNAME)
                     .build();
         }
         return db;
     }
 
     public abstract CommitteeDao committeeDao();
+
     public abstract ProjectDao projectDao();
 
 }

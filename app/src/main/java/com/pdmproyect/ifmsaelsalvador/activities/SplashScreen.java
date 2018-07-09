@@ -39,7 +39,7 @@ public class SplashScreen extends AppCompatActivity {
 
     private String getLocalToken(){
         SharedPreferences preferences=
-                getSharedPreferences("log", Context.MODE_PRIVATE);
-        return preferences.getString("token", "");
+                getSharedPreferences(getString(R.string.sharedpreferences_name), Context.MODE_PRIVATE);
+        return preferences.getString(getString(R.string.sharedpreferences_key), "");
     }
 }

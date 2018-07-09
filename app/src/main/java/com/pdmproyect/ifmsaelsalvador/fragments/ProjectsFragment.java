@@ -45,15 +45,15 @@ public class ProjectsFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context=getActivity();
-        token=context.getSharedPreferences("log", Context.MODE_PRIVATE)
+        context = getActivity();
+        token = context.getSharedPreferences("log", Context.MODE_PRIVATE)
                 .getString("token", "");
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.committee_fragment, container, false);
+        View view = inflater.inflate(R.layout.committee_fragment, container, false);
         bindViews(view);
         setThings();
         return view;
@@ -64,23 +64,23 @@ public class ProjectsFragment extends Fragment {
      */
     private void bindViews(View view) {
         recyclerView = view.findViewById(R.id.recyclerview_all);
-        refreshLayout=view.findViewById(R.id.swipe);
+        refreshLayout = view.findViewById(R.id.swipe);
     }
 
-    private void setThings(){
-        viewModel= ViewModelProviders.of(this).get(IFMSAViewModel.class);
-        adapter=new ProjectAdapter();
-        viewModel.getAllProjects().observe(this, v->adapter.setProjectEntityList(v));
+    private void setThings() {
+        viewModel = ViewModelProviders.of(this).get(IFMSAViewModel.class);
+        adapter = new ProjectAdapter();
+        viewModel.getAllProjects().observe(this, v -> adapter.setProjectEntityList(v));
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        refreshLayout.setOnRefreshListener(()->refreshProjects(viewModel, getToken(), refreshLayout));
+        refreshLayout.setOnRefreshListener(() -> refreshProjects(viewModel, getToken(), refreshLayout));
     }
 
-    private String getToken(){
+    private String getToken() {
         return token;
     }
 
-    private static void refreshProjects(IFMSAViewModel viewModel, String token, SwipeRefreshLayout refreshLayout){
+    private static void refreshProjects(IFMSAViewModel viewModel, String token, SwipeRefreshLayout refreshLayout) {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(Project.class, new ProjectDeserializer())
                 .create();
@@ -89,17 +89,17 @@ public class ProjectsFragment extends Fragment {
                 .baseUrl(IFMSAAPI.END_POINT)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-        Call<List<Project>> getProjects=retrofit.create(IFMSAAPI.class)
-                .getProjects("Bearer "+token);
+        Call<List<Project>> getProjects = retrofit.create(IFMSAAPI.class)
+                .getProjects("Bearer " + token);
         getProjects.enqueue(new Callback<List<Project>>() {
             @Override
             public void onResponse(Call<List<Project>> call, Response<List<Project>> response) {
                 System.out.println(response.code());
                 refreshLayout.setRefreshing(false);
-                if(response.code()==200){
+                if (response.code() == 200) {
                     viewModel.nukeTable();
                     for (Project project : response.body()) {
-                        ProjectEntity entity=
+                        ProjectEntity entity =
                                 new ProjectEntity(
                                         project.getId(),
                                         project.getCommittee(),

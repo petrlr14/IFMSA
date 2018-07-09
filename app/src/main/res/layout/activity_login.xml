@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:id="@+id/main_layout_login"
     android:orientation="vertical"
 
     tools:context=".activities.LoginActivity">
@@ -26,8 +26,8 @@
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="25dp"
-                android:src="@drawable/user_icon"
-                android:layout_marginStart="25dp" />
+                android:layout_marginStart="25dp"
+                android:src="@drawable/user_icon" />
 
             <EditText
                 android:id="@+id/Username_login"

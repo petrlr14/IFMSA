@@ -14,7 +14,7 @@ import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter;
 
 public class StepperAdapter extends AbstractFragmentStepAdapter {
 
-    private static final String KEY="CURRENT_STEP_POSITION_KEY";
+    private static final String KEY = "CURRENT_STEP_POSITION_KEY";
 
     public StepperAdapter(@NonNull FragmentManager fm, @NonNull Context context) {
         super(fm, context);
@@ -36,7 +36,7 @@ public class StepperAdapter extends AbstractFragmentStepAdapter {
                 fun.setArguments(b);
                 return fun;
             default:
-                FragmentCollege fc=new FragmentCollege();
+                FragmentCollege fc = new FragmentCollege();
                 b.putInt(KEY, position);
                 fc.setArguments(b);
                 return fc;

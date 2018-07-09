@@ -17,40 +17,44 @@ public class Repository {
     private ProjectDao projectDao;
 
     public Repository(Application application) {
-        AppDatabase db=AppDatabase.getInstance(application);
-        this.committeeDao=db.committeeDao();
-        this.projectDao=db.projectDao();
+        AppDatabase db = AppDatabase.getInstance(application);
+        this.committeeDao = db.committeeDao();
+        this.projectDao = db.projectDao();
     }
 
     //Committees
-    public LiveData<List<Committee>> getCommittees(){
+    public LiveData<List<Committee>> getCommittees() {
         return this.committeeDao.getAllCommittees();
     }
-    public void insertCommittee(Committee committee){
+
+    public void insertCommittee(Committee committee) {
         new InsertCommitteeAsyncTask(committeeDao).execute(committee);
     }
 
     //Projects
-    public LiveData<List<ProjectEntity>> getProjects(){
+    public LiveData<List<ProjectEntity>> getProjects() {
         return this.projectDao.getAllProjects();
     }
-    public LiveData<List<ProjectEntity>> getProjectsByCommittee(String committee){
+
+    public LiveData<List<ProjectEntity>> getProjectsByCommittee(String committee) {
         return this.projectDao.getProjectsByCommittee(committee);
     }
-    public LiveData<ProjectEntity> getProjectByID(String id){
+
+    public LiveData<ProjectEntity> getProjectByID(String id) {
         return this.projectDao.getProjectByID(id);
     }
-    public void insertProject(ProjectEntity projectEntity){
+
+    public void insertProject(ProjectEntity projectEntity) {
         new InsertProjectAsyncTask(projectDao).execute(projectEntity);
     }
 
-    public void nukeTable(){
+    public void nukeTable() {
         new deleteTableAsyncTask(projectDao).execute();
     }
 
     /* *****************************************INNER CLASSES****************************** */
     //Committees
-    public static class InsertCommitteeAsyncTask extends AsyncTask<Committee, Void, Void>{
+    public static class InsertCommitteeAsyncTask extends AsyncTask<Committee, Void, Void> {
 
         private CommitteeDao committeeDao;
 
@@ -64,8 +68,9 @@ public class Repository {
             return null;
         }
     }
+
     //Projects
-    public static class InsertProjectAsyncTask extends AsyncTask<ProjectEntity, Void, Void>{
+    public static class InsertProjectAsyncTask extends AsyncTask<ProjectEntity, Void, Void> {
 
         private ProjectDao projectDao;
 

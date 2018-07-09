@@ -49,7 +49,7 @@ public class IFMSAViewModel extends AndroidViewModel {
         this.repository.insertProject(projectEntity);
     }
 
-    public void nukeTable(){
+    public void nukeTable() {
         this.repository.nukeTable();
     }
 }

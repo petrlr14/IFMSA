@@ -49,7 +49,7 @@ public class FragmentName extends android.support.v4.app.Fragment implements Blo
                 || email.getText().toString().equals("")) {
             return new VerificationError("Field must not be empty");
         }
-        if(!validateEmail(email.getText().toString())){
+        if (!validateEmail(email.getText().toString())) {
             return new VerificationError("Email must be valid");
         }
         return null;
@@ -68,14 +68,14 @@ public class FragmentName extends android.support.v4.app.Fragment implements Blo
     @Override
     @UiThread
     public void onNextClicked(StepperLayout.OnNextClickedCallback callback) {
-        new Handler().postDelayed(()->onNext(callback),500);
+        new Handler().postDelayed(() -> onNext(callback), 500);
     }
 
-    private void onNext(StepperLayout.OnNextClickedCallback callback){
+    private void onNext(StepperLayout.OnNextClickedCallback callback) {
         SignUpData.getInstance().
                 setFirstStepInfo(
                         fname.getText().toString()
-                                +" "+lname.getText().toString(),
+                                + " " + lname.getText().toString(),
                         email.getText().toString()
                 );
         callback.goToNextStep();
@@ -96,10 +96,10 @@ public class FragmentName extends android.support.v4.app.Fragment implements Blo
      * @param email email to be validated
      * @return true if is valid, false otherwise
      */
-    private boolean validateEmail(String email){
-         String regex="^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
-         Pattern pattern=Pattern.compile(regex);
-         return pattern.matcher(email).matches();
+    private boolean validateEmail(String email) {
+        String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(email).matches();
     }
 }
 

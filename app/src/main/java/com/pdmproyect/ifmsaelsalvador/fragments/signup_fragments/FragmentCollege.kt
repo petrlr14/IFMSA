@@ -22,28 +22,28 @@ import com.stepstone.stepper.VerificationError
 import kotlinx.android.synthetic.main.sing_up_college_layout.*
 import java.io.Serializable
 
-class FragmentCollege:Fragment(),BlockingStep{
+class FragmentCollege : Fragment(), BlockingStep {
 
     lateinit var spinner_college: Spinner
     lateinit var spinner_year: Spinner
     lateinit var adapter_college: ArrayAdapter<CharSequence>
     lateinit var adapter_year: ArrayAdapter<CharSequence>
     lateinit var phone_nomber: TextInputEditText
-    var mContext: Context?=null
+    var mContext: Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mContext=context
+        mContext = context
 
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val vista =  LayoutInflater.from(context).inflate(R.layout.sing_up_college_layout, container, false)
+        val vista = LayoutInflater.from(context).inflate(R.layout.sing_up_college_layout, container, false)
 
         spinner_college = vista.findViewById(R.id.spinner_college)
         spinner_year = vista.findViewById(R.id.spinner_year)
-        phone_nomber=vista.findViewById(R.id.edit_text_phone_number)
+        phone_nomber = vista.findViewById(R.id.edit_text_phone_number)
 
         adapter_college = ArrayAdapter.createFromResource(context, R.array.colleges_array, android.R.layout.simple_spinner_item)
         adapter_college.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -61,7 +61,7 @@ class FragmentCollege:Fragment(),BlockingStep{
     }
 
     override fun verifyStep(): VerificationError? {
-        if(edit_text_phone_number.text.equals("")){
+        if (edit_text_phone_number.text.equals("")) {
             return VerificationError("Phone number must not be empty")
         }
         return null
@@ -73,9 +73,9 @@ class FragmentCollege:Fragment(),BlockingStep{
 
     override fun onCompleteClicked(callback: StepperLayout.OnCompleteClickedCallback?) {
         SignUpData.getInstance().setThirdStepInfo(spinner_college.selectedItem.toString(), spinner_year.selectedItem.toString(), phone_nomber.text.toString())
-        if (ClientRequest.signUp(SignUpData.getInstance(), mContext)){
+        if (ClientRequest.signUp(SignUpData.getInstance(), mContext)) {
             println("Bien")
-        }else{
+        } else {
             println("Bad")
         }
     }

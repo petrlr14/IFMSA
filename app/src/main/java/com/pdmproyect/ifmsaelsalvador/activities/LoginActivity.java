@@ -34,27 +34,27 @@ public class LoginActivity extends AppCompatActivity {
 
     private void bindViews() {
         log_in = findViewById(R.id.boton_login);
-        log_in.setOnClickListener(v->login());
+        log_in.setOnClickListener(v -> login());
         register = findViewById(R.id.register_login);
-        register.setOnClickListener(v->signIn());
+        register.setOnClickListener(v -> signIn());
         forgot = findViewById(R.id.forgot_pass_login);
-        editTextPass=findViewById(R.id.password_login);
-        editTextUser=findViewById(R.id.Username_login);
-        linearLayout=findViewById(R.id.main_layout_login);
+        editTextPass = findViewById(R.id.password_login);
+        editTextUser = findViewById(R.id.Username_login);
+        linearLayout = findViewById(R.id.main_layout_login);
     }
 
-    private void login(){
-        if(editTextPass.getText().toString().equals("")||
-                editTextUser.getText().toString().equals("")){
-            Snackbar.make(linearLayout,"Field most not be empty", Snackbar.LENGTH_LONG ).show();
-        }else{
-            Login login=new Login(editTextUser.getText().toString(), editTextPass.getText().toString());
+    private void login() {
+        if (editTextPass.getText().toString().equals("") ||
+                editTextUser.getText().toString().equals("")) {
+            Snackbar.make(linearLayout, getString(R.string.field_empty_message), Snackbar.LENGTH_LONG).show();
+        } else {
+            Login login = new Login(editTextUser.getText().toString(), editTextPass.getText().toString());
             ClientRequest.login(login, this);
         }
     }
 
-    private void signIn(){
-        Intent intent=new Intent(LoginActivity.this, SignUpActivity.class);
+    private void signIn() {
+        Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
         finish();
     }

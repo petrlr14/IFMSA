@@ -16,8 +16,8 @@ import java.util.List;
 public class ProjectDeserializer implements JsonDeserializer<Project> {
     @Override
     public Project deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-        JsonObject object=json.getAsJsonObject();
-        Project aux=new Project();
+        JsonObject object = json.getAsJsonObject();
+        Project aux = new Project();
         aux.setId(object.get("_id").getAsString());
         aux.setName(object.get("name").getAsString());
         aux.setCommittee(object.get("committee").getAsString());
