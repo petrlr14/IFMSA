@@ -66,5 +66,20 @@
     <string name="committee_photo_description">Committee photo</string>
     <string name="phone_number_hint">Phone number</string>
 
+    <!--Strings related with emergin or error mesages in Toast/Snackbar messages -->
+    <string name="field_empty_message">The fields must not be empty</string>
+    <string name="password_match_message">Passwords must match</string>
+
+    <!--TODO: Put these text in SharedPreferences name and key values -->
+    <string name="sharedpreferences_name">log</string>
+    <string name="sharedpreferences_key">token</string>
+
+    <!--Projects class attributes-->
+    <string name="project_class_id_attribute">_id</string>
+    <string name="project_class_name_attribute">name</string>
+    <string name="project_class_comitee_attribute">commitee</string>
+    <string name="project_class_place_attribute">place</string>
+    <string name="project_class_description_attribute">description</string>
+    <string name="project_class_vacancies_attribute">vacancies</string>
 
 </resources>
