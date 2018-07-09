@@ -27,6 +27,11 @@ public interface IFMSAAPI {
     @POST("login")
     Call<String> login(@Body Login login);
 
+    @FormUrlEncoded
+    @POST("project")
+    Call<String> postProjects(@Header("Authorization") String auth,
+                              @Field("project") Project project);
+
     @GET("project")
     Call<List<Project>> getProjects(@Header("Authorization") String auth);
 }
