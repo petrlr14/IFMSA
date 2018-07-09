@@ -31,22 +31,22 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private IFMSAViewModel viewModel;
-    private boolean isFirstEntry=true;
+    private boolean isFirstEntry = true;
     private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(savedInstanceState!=null){
-            if(savedInstanceState.containsKey("first")){
-                isFirstEntry=getBoolean("first");
+        if (savedInstanceState != null) {
+            if (savedInstanceState.containsKey("first")) {
+                isFirstEntry = getBoolean("first");
             }
         }
         bindViews(isFirstEntry);
     }
 
-    private void bindViews(boolean flag){
+    private void bindViews(boolean flag) {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        viewModel= ViewModelProviders.of(this).get(IFMSAViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(IFMSAViewModel.class);
         if (flag) {
             setFirstView();
         }
@@ -99,20 +99,20 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        String title="";
+        String title = "";
         Fragment fragment = null;
         switch (id) {
             case R.id.perfil_menu:
                 fragment = new ProfileFragment();
-                title="Profile";
+                title = "Profile";
                 break;
             case R.id.comites_menu:
-                fragment=new CommitteeFragment();
-                title="Committees";
+                fragment = new CommitteeFragment();
+                title = "Committees";
                 break;
             case R.id.proyectos_menu:
-                fragment=new ProjectsFragment();
-                title="Projects";
+                fragment = new ProjectsFragment();
+                title = "Projects";
                 break;
             case R.id.solicitar_proyecto_menu:
                 fragment = new CreateProjectsFragment();
@@ -130,8 +130,8 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private String getToken(){
-        String token=getSharedPreferences(getString(R.string.sharedpreferences_name), Context.MODE_PRIVATE)
+    private String getToken() {
+        String token = getSharedPreferences(getString(R.string.sharedpreferences_name), Context.MODE_PRIVATE)
                 .getString(getString(R.string.sharedpreferences_key), "");
         return token;
     }
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity
     private void setFirstView() {
         if (isFirstEntry) {
             navigationView.setCheckedItem(R.id.perfil_menu);
-            navigationView.getMenu().performIdentifierAction(R.id.perfil_menu,0);
+            navigationView.getMenu().performIdentifierAction(R.id.perfil_menu, 0);
         }
     }
 
