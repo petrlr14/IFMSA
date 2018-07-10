@@ -126,7 +126,6 @@
                 android:textSize="@dimen/text_profile"
                 android:textStyle="bold" />
 
-
             <DatePicker
                 android:id="@+id/DatePicker_Date_CrearProyecto"
                 android:layout_width="match_parent"
@@ -135,7 +134,6 @@
 
 
             </DatePicker>
-
 
             <TextView
                 android:layout_width="match_parent"

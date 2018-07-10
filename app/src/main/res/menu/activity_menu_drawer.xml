@@ -6,20 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/perfil_menu"
-            android:icon="@drawable/user_icon"
-            android:title="@string/menu_perfil"
-            />
+            android:icon="@drawable/ic_shortcut_person_outline"
+            android:title="@string/menu_perfil" />
         <item
             android:id="@+id/comites_menu"
-            android:icon="@drawable/comites_icon"
-            android:title="@string/menu_comites"/>
+            android:icon="@drawable/ic_shortcut_people_outline"
+            android:title="@string/menu_comites" />
         <item
             android:id="@+id/proyectos_menu"
-            android:icon="@drawable/proyectos_menu"
+            android:icon="@drawable/ic_shortcut_label_outline"
             android:title="@string/menu_proyectos" />
         <item
             android:id="@+id/solicitar_proyecto_menu"
-            android:icon="@drawable/solicitar_proyecto_icon"
+            android:icon="@drawable/ic_shortcut_add_circle_outline"
             android:title="@string/menu_solicitar_proyecto" />
     </group>
 

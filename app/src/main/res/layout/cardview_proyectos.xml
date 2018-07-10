@@ -3,34 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="8dp">
 
 
     <RelativeLayout
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/ImageView_foto_proyecto"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:src="@color/indigo_200"
-            android:contentDescription="@string/committee_photo_description" />
+            android:layout_height="155dp"
+            android:contentDescription="@string/committee_photo_description"
+            android:src="@color/indigo_200" />
 
         <LinearLayout
             android:id="@+id/proyect_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ImageView_foto_proyecto">
+            android:layout_below="@id/ImageView_foto_proyecto"
+            android:layout_margin="8dp">
 
             <TextView
                 android:id="@+id/TextView_NombreProyecto_proyecto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:text="Proyecto"
-                android:textSize="20dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
 
@@ -47,16 +48,16 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/arrow_back" />
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/TextView_LugarProyecto_Proyecto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
                 android:text="Lugar de proyecto"
-                android:textSize="@dimen/text_profile" />
+                android:textSize="14sp" />
 
 
         </LinearLayout>
@@ -66,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/lugar_layout"
+            android:layout_margin="8dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -76,17 +78,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/arrow_back" />
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="16dp"
                     android:text="Fecha"
-                    android:textSize="@dimen/text_profile"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -94,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
+                    android:layout_marginLeft="8dp"
                     android:text="00/00/0000"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -107,17 +107,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/arrow_back" />
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="16dp"
                     android:text="Hora"
-                    android:textSize="@dimen/text_profile"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -125,9 +123,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="8dp"
                     android:text="10:00"
-                    android:textSize="@dimen/text_profile" />
+                    android:textSize="14sp" />
 
 
             </LinearLayout>
@@ -136,19 +134,17 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_below="@id/car"
-            android:gravity="center"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/car"
+            android:layout_margin="16dp"
+            android:gravity="center">
 
             <Button
                 android:layout_width="200dp"
-                android:text="Participar"
-
+                android:layout_height="match_parent"
                 android:background="@drawable/borde_de_btn"
-                android:layout_height="match_parent" />
+                android:text="Participar" />
 
 
         </LinearLayout>
